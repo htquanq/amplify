@@ -1,0 +1,6 @@
+{
+  "aws_project_region": "ap-southeast-1",
+  "aws_content_delivery_bucket": "payloaddemo-20240822132306-hostingbucket-demo",
+  "aws_content_delivery_bucket_region": "ap-southeast-1",
+  "aws_content_delivery_url": "https://d3jj1yv35c56w0.cloudfront.net"
+}

@@ -1,0 +1,24 @@
+version: 1.0
+frontend:
+  phases:
+    preBuild:
+      commands:
+        - nvm install 20.15.0
+        - nvm use 20.15.0
+        - corepack enable pnpm
+        - corepack use pnpm@9.1.1
+        - pnpm i --frozen-lockfile
+    build:
+      commands:
+        - nvm install 20.15.0
+        - nvm use 20.15.0
+        - corepack enable pnpm
+        - corepack use pnpm@9.1.1
+        - pnpm run build
+  artifacts:
+    baseDirectory: .next
+    files:
+      - "**/*"
+  cache:
+    paths:
+      - node_modules/**/*
