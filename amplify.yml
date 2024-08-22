@@ -3,6 +3,16 @@ frontend:
   phases:
     preBuild:
       commands:
+        - sudo yum update -y
+        - sudo yum groupinstall -y "Development Tools" 
+        - sudo yum install -y expat-devel gtk-doc libpng-devel glib2-devel libjpeg-devel zlib-devel
+        - wget https://github.com/libvips/libvips/releases/download/v8.12.2/vips-8.12.2.tar.gz
+        - tar -xzvf vips-8.12.2.tar.gz
+        - cd vips-8.12.2
+        - sudo ./configure
+        - sudo make
+        - sudo make install
+        - cd ..
         - nvm install 20.15.0
         - nvm use 20.15.0
         - corepack enable pnpm
