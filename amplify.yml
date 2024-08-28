@@ -4,7 +4,8 @@ frontend:
     preBuild:
       commands:
         - echo $SHELL
-        - apt-get update -qq && \
+        - |
+          apt-get update -qq && \
           apt-get install -qqy python git wget libc6 build-essential libglib2.0-dev libgirepository1.0-dev meson \
           libfftw3-dev libexif-dev libjpeg62-turbo-dev \
           libwebp-dev libtiff5-dev libpng-dev \
@@ -20,7 +21,8 @@ frontend:
           rm /etc/apt/apt.conf.d/default-release && \
           rm -rf /var/lib/apt/lists/*
         - LIBVIPS_VERSION=8.15.2
-        - wget -O /tmp/libvips.tar.gz https://github.com/libvips/libvips/releases/download/v$LIBVIPS_VERSION/vips-$LIBVIPS_VERSION.tar.xz && \
+        - |
+          wget -O /tmp/libvips.tar.gz https://github.com/libvips/libvips/releases/download/v$LIBVIPS_VERSION/vips-$LIBVIPS_VERSION.tar.xz && \
           mkdir /libvips && cd /libvips && \
           tar xf /tmp/libvips.tar.gz --strip-components=1 && \
           meson setup build-dir --buildtype=release && \
