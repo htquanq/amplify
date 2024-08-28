@@ -3,7 +3,6 @@ frontend:
   phases:
     preBuild:
       commands:
-        - echo $SHELL
         - |
           apt-get update -qq && \
           apt-get install -qqy python git wget libc6 build-essential libglib2.0-dev libgirepository1.0-dev meson \
