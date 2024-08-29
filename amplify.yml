@@ -37,6 +37,7 @@ frontend:
         - corepack enable pnpm
         - corepack use pnpm@9.1.1
         - pnpm i
+        - pnpm rebuild sharp
     build:
       commands:
         - pnpm run build
